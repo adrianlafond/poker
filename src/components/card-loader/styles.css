@@ -1,0 +1,18 @@
+.card-loader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--poker-space2x);
+}
+
+.card-loader__suit {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--poker-space);
+  justify-content: center;
+}
+
+.card-loader__img {
+  width: 50px;
+  height: 72.6px;
+  border: 1px solid black;
+}
