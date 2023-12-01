@@ -1,0 +1,47 @@
+{
+  "name": "todo-preact",
+  "version": "1.0.0",
+  "description": "A web app built with Snowpack, TypeScript, Preact, Jest",
+  "main": "index.js",
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build",
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "lint": "ts-standard --fix",
+    "prettier": "prettier --check \"src/**/*.{js,jsx}\"",
+    "test": "web-test-runner \"src/**/*.{spec,test}.{ts,tsx}\""
+  },
+  "keywords": [
+    "snowpack",
+    "preact",
+    "typescript",
+    "jest"
+  ],
+  "author": "Adrian Lafond <mail@adrianlafond.com>",
+  "license": "MIT",
+  "dependencies": {
+    "preact": "^10.19.2"
+  },
+  "devDependencies": {
+    "@prefresh/snowpack": "^3.2.0",
+    "@snowpack/plugin-dotenv": "^2.2.0",
+    "@snowpack/plugin-typescript": "^1.2.1",
+    "@snowpack/web-test-runner-plugin": "^0.2.2",
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/preact": "^2.0.1",
+    "@types/chai": "^4.3.11",
+    "@types/mocha": "^10.0.6",
+    "@types/snowpack-env": "^2.3.6",
+    "@web/test-runner": "^0.18.0",
+    "chai": "^4.3.10",
+    "prettier": "^3.1.0",
+    "snowpack": "^3.8.8",
+    "ts-standard": "^12.0.2",
+    "typescript": "^5.3.2"
+  },
+  "ts-standard": {
+    "ignore": [
+      "build"
+    ]
+  }
+}
