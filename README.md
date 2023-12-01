@@ -1,6 +1,9 @@
 # Todo: Snowpack, Preact, TypeScript, Jest
 
-This project is heavily influenced by the (https://github.com/FredKSchott/snowpack/tree/main/create-snowpack-app/app-template-preact-typescript)[Snowpack Preact Typescript template].
+## credits
+The Snowpack/Preact/Typescript setup is heavily influenced by the [Snowpack Preact Typescript template](https://github.com/FredKSchott/snowpack/tree/main/create-snowpack-app/app-template-preact-typescript).
+
+Playing card graphics are courtesy of [vector-playing-cards](https://code.google.com/archive/p/vector-playing-cards/).
 
 ## notes
 
