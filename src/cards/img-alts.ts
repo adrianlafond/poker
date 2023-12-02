@@ -1,9 +1,17 @@
-import { plain, detailed, suits } from './constants'
+import { suits, values } from './constants'
+import { CardKey } from './'
+const spellingMap = {
+  A: 'Ace',
+  J: 'Jack',
+  Q: 'Queen',
+  K: 'King'
+} as const
 
-const values: string[] = plain.concat(detailed)
-export const imgAlts: string[] = suits.reduce<string[]>((array, suit) => {
-  values.forEach(value => {
-    array.push(`${value.charAt(0).toUpperCase()}${value.substring(1)} of ${suit.charAt(0).toUpperCase()}${suit.substring(1)}`)
+export const imgAlts: Record<CardKey, string> = suits.reduce<Record<CardKey, string>>((alts, suit) => {
+  const suitKey = suit.charAt(0).toUpperCase()
+  values.forEach(key => {
+    const value = key in spellingMap ? spellingMap[key as keyof typeof spellingMap] : key
+    alts[`${key}${suitKey}` as CardKey] = `${value} of ${suit.charAt(0).toUpperCase()}${suit.substring(1)}`
   })
-  return array
-}, [])
+  return alts
+}, {} as Record<CardKey, string>)

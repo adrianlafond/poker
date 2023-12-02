@@ -1,18 +1,17 @@
 import { JSX, h } from 'preact'
 import { useRef } from 'preact/hooks'
-import { filenames, imgAlts } from '../../cards'
+import { keys, filenames, imgAlts } from '../../cards'
+import { Card } from '../card'
 import './styles.css'
 
 export interface CardLoaderProps {
-  imgSrcPaths?: string[],
   onComplete?: () => void
   onError?: () => void
 }
 
-export function CardLoader({
-  imgSrcPaths,
+export function CardLoader ({
   onComplete,
-  onError,
+  onError
 }: CardLoaderProps): JSX.Element {
   const complete = useRef(0)
 
@@ -22,62 +21,33 @@ export function CardLoader({
     }
   }
 
-  const paths = imgSrcPaths ?? filenames;
+  const handleError = (): void => {
+    onError?.()
+    handleComplete()
+  }
+
+  const rows = [
+    [0, 13],
+    [13, 26],
+    [26, 39],
+    [39]
+  ]
 
   return (
-    <div class="card-loader">
-      <div class="card-loader__suit">
-        {paths.slice(0, 13).map((filename, index) => (
-          <img
-            class="card-loader__img"
-            key={filename}
-            onAbort={onError}
-            onError={onError}
-            onLoad={handleComplete}
-            src={filename}
-            alt={imgAlts[index]}
-          />
-        ))}
-      </div>
-      <div class="card-loader__suit">
-        {paths.slice(13, 26).map((filename, index) => (
-          <img
-            class="card-loader__img"
-            key={filename}
-            onAbort={onError}
-            onError={onError}
-            onLoad={handleComplete}
-            src={filename}
-            alt={imgAlts[index]}
-          />
-        ))}
-      </div>
-      <div class="card-loader__suit">
-        {paths.slice(26, 39).map((filename, index) => (
-          <img
-            class="card-loader__img"
-            key={filename}
-            onAbort={onError}
-            onError={onError}
-            onLoad={handleComplete}
-            src={filename}
-            alt={imgAlts[index]}
-          />
-        ))}
-      </div>
-      <div class="card-loader__suit">
-        {paths.slice(39).map((filename, index) => (
-          <img
-            class="card-loader__img"
-            key={filename}
-            onAbort={onError}
-            onError={console.log}
-            onLoad={handleComplete}
-            src={filename}
-            alt={imgAlts[index]}
-          />
-        ))}
-      </div>
+    <div class="poker-card-loader">
+      {rows.map((row) => (
+        <div class="poker-card-loader__suit">
+          {keys.slice(...row).map((key) => (
+            <Card
+              key={key}
+              id={key}
+              onError={handleError}
+              onLoad={handleComplete}
+              size="sm"
+            />
+          ))}
+        </div>
+      ))}
     </div>
   )
 }

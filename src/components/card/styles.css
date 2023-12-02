@@ -1,0 +1,59 @@
+.poker-card {
+  position: relative;
+  width: 50px;
+  height: 72.6px;
+  border: 1px solid black;
+  overflow: hidden;
+}
+
+.poker-card--sm {
+  width: 50px;
+  height: 72.6px;
+  border-radius: 3px;
+}
+
+.poker-card--md {
+  width: 100px;
+  height: 145px;
+  border-radius: 6px;
+}
+
+.poker-card--lg {
+  width: 200px;
+  height: 290px;
+  border-radius: 8px;
+}
+
+.poker-card__mode {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.poker-card__back {
+  background-color: var(--poker-card-facedown);
+}
+
+.poker-card__fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.poker-card__fallback-text--sm {
+  font-size: 1rem;
+}
+.poker-card__fallback-text--md {
+  font-size: 2rem;
+}
+.poker-card__fallback-text--lg {
+  font-size: 3rem;
+}
+
+.poker-card__fallback,
+.poker-card__loading {
+  background-color: var(--poker-loading-background);
+  color: var(--poker-loading-foreground);
+}

@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 10px;
 }
 
 code {
@@ -15,4 +16,7 @@ code {
 :root {
   --poker-space: 8px;
   --poker-space2x: 16px;
+  --poker-loading-background: black;
+  --poker-loading-foreground: white;
+  --poker-card-facedown: maroon;
 }
