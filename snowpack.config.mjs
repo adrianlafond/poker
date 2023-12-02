@@ -30,7 +30,7 @@ export default {
   },
   devOptions: {
     /* ... */
-    port: IS_TEST ? 8080 : 8081
+    port: IS_TEST ? 8081 : 8080
   },
   buildOptions: {
     /* ... */

@@ -4,7 +4,7 @@ import { fake } from 'sinon'
 import { expect } from 'chai'
 import { CardLoader } from './card-loader'
 
-describe.skip('CardLoader', () => {
+describe('CardLoader', () => {
   it('calls onComplete when all images have loaded', async () => {
     const handleComplete = fake()
     render(<CardLoader onComplete={handleComplete} />)
